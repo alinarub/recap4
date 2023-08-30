@@ -1,0 +1,16 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form--headline {
+  font-size: 1rem;
+}
+
+.form--button {
+  width: 10%;
+  text-align: center;
+}
