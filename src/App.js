@@ -56,26 +56,23 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1>
-          <span>
-            {weather.condition}
-            {""}
-          </span>
+      <div className="app">
+        <h1 className="app-heading">
+          <span>{weather.condition}</span>
           <span>{weather.temperature}&nbsp;&#8451;</span>
         </h1>
-      </div>
-      <Form onAddActivity={handleAddActivity} />
 
-      <h4>
-        {weather.isGoodWeather
-          ? "The weather is awesome! Go outside and: "
-          : "Bad weather outside! There is nothing fun to do. "}
-      </h4>
-      <List
-        activities={filterActivities}
-        onDeleteActivity={handleDeleteActivity}
-      />
+        <h4>
+          {weather.isGoodWeather
+            ? "The weather is awesome! Go outside and: "
+            : "Bad weather outside! There is nothing fun to do. "}
+        </h4>
+        <List
+          activities={filterActivities}
+          onDeleteActivity={handleDeleteActivity}
+        />
+        <Form onAddActivity={handleAddActivity} />
+      </div>
     </>
   );
 }

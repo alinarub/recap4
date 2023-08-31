@@ -1,10 +1,17 @@
+import "./List.css";
+
 export function List({ activities, onDeleteActivity }) {
   return (
-    <ul>
+    <ul className="list__item-ul">
       {activities.map(({ id, name }) => (
-        <li key={id}>
+        <li className="list__item" key={id}>
           {name}
-          <button onClick={() => onDeleteActivity(id)}>&#x2717;</button>
+          <button
+            className="delete-button"
+            onClick={() => onDeleteActivity(id)}
+          >
+            &#x2717;
+          </button>
         </li>
       ))}
     </ul>
