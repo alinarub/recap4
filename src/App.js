@@ -18,8 +18,10 @@ function App() {
         );
         if (response.ok) {
           const data = await response.json();
+          console.log(data);
 
           setWeather(data);
+          console.log(weather);
         } else {
           console.error("Failed!!");
         }
@@ -38,29 +40,42 @@ function App() {
   function handleAddActivity(newActivity) {
     setActivities((previousActivities) => [...previousActivities, newActivity]);
   }
+  function handleDeleteActivity(id) {
+    setActivities((previousActivities) =>
+      previousActivities.filter((activity) => activity.id !== id)
+    );
+  }
 
-  const isGoodWeather = weather?.isGoodWeather ?? false;
+  if (!weather) {
+    return null;
+  }
 
   const filterActivities = activities.filter(
-    (activity) => activity.isForGoodWeather === isGoodWeather
+    (activity) => activity.isForGoodWeather === weather.isGoodWeather
   );
 
   return (
     <>
-      {/* <div>
+      <div>
         <h1>
-          <span>{weather.condition}</span>
+          <span>
+            {weather.condition}
+            {""}
+          </span>
           <span>{weather.temperature}&nbsp;&#8451;</span>
         </h1>
-      </div> */}
+      </div>
       <Form onAddActivity={handleAddActivity} />
 
       <h4>
-        {isGoodWeather
+        {weather.isGoodWeather
           ? "The weather is awesome! Go outside and: "
           : "Bad weather outside! There is nothing fun to do. "}
       </h4>
-      <List activities={filterActivities} />
+      <List
+        activities={filterActivities}
+        onDeleteActivity={handleDeleteActivity}
+      />
     </>
   );
 }

@@ -1,10 +1,11 @@
-export function List({ activities }) {
+export function List({ activities, onDeleteActivity }) {
   return (
     <ul>
       {activities.map(({ id, name }) => (
-        <div>
-          <li key={id}>{name}</li>
-        </div>
+        <li key={id}>
+          {name}
+          <button onClick={() => onDeleteActivity(id)}>&#x2717;</button>
+        </li>
       ))}
     </ul>
   );
