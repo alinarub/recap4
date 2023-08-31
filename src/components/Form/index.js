@@ -1,4 +1,5 @@
 import "./Form.css";
+import { uid } from "uid";
 
 export function Form({ onAddActivity }) {
   function handleSubmit(event) {
@@ -10,6 +11,7 @@ export function Form({ onAddActivity }) {
     const data = {
       name: formElement.name.value,
       isForGoodWeather: formElement.isForGoodWeather.checked,
+      id: uid(),
     };
     onAddActivity(data);
 
