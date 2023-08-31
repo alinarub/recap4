@@ -1,3 +1,10 @@
+## Completed result:
+
+![DF314CF5-A3D2-4DDC-9D01-A79CABF7F874](https://github.com/alinarub/recap4/assets/137082094/56638e18-c120-4cf8-950b-01b78fbabf90)
+
+
+
+
 # Recap Project 4: Weather & Activities App
 
 In this recap project, you'll work together with a partner: you'll create an app that fetches a
